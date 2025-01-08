@@ -1,0 +1,391 @@
+SAMPLE QUERIES AND RESPONSES
+### Example 1:
+**Code:**
+```python
+x = 10
+if x == 10
+    print("x is 10")
+Response: This code has a syntax error. The if condition is missing a colon (:) at the end. In Python, a colon is required after control structures like if, else, for, while, etc. Without the colon, Python will not know where the block of code associated with the condition starts.
+
+Example 2:
+Code:
+
+python
+Copy code
+x = "5"
+y = 10
+z = x + y
+Response: This is a type error. You are trying to add a string (x = "5") and an integer (y = 10). Python does not automatically convert types for operations, so attempting to add a string and an integer will raise a TypeError. You need to convert the string to an integer using int(x) before performing the addition.
+
+Example 3:
+Code:
+
+python
+Copy code
+for i in range(5)
+    print(i)
+Response: This code has a syntax error. The for loop is missing a colon (:) after the loop declaration. The colon is necessary in Python to indicate the start of the block of code that will be executed in the loop.
+
+Example 4:
+Code:
+
+python
+Copy code
+def greet(name):
+    print(f"Hello, {name}")
+
+greet()
+Response: This code will raise a TypeError. The function greet requires an argument for the name parameter, but none is provided when the function is called. You need to either provide a default value for the parameter or supply a value when calling the function.
+
+Example 5:
+Code:
+
+python
+Copy code
+x = [1, 2, 3]
+x[5] = 10
+Response: This code raises an IndexError because you're trying to access an index that doesn't exist in the list. The list x has only three elements, so index 5 is out of bounds. Always ensure that the index you're trying to access is within the valid range of the list.
+
+Example 6:
+Code:
+
+python
+Copy code
+x = 10
+y = 0
+z = x / y
+Response: This code raises a ZeroDivisionError because division by zero is not allowed in Python. Before performing division, you should check if the denominator is zero to avoid this error.
+
+Example 7:
+Code:
+
+python
+Copy code
+x = [1, 2, 3]
+x.remove(4)
+Response: This code raises a ValueError because the value 4 does not exist in the list x. The remove() method tries to remove a value from the list, but if the value is not found, it raises an exception. You can check for the presence of the value first or handle the exception with a try-except block.
+
+Example 8:
+Code:
+
+python
+Copy code
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+factorial(0)
+Response: This code will result in a RecursionError because the base case of the recursion (n == 1) does not handle the case when n is 0. The function will keep calling itself indefinitely because the condition to stop the recursion is not satisfied when n is 0. You should add a check for n == 0 and return 1 in that case.
+
+Example 9:
+Code:
+
+python
+Copy code
+x = [1, 2, 3, 4]
+y = x[2, 3]
+Response: This code raises a TypeError. You are trying to slice a list with a tuple ([2, 3]), but Python expects a single index or a slice using the colon : operator. You should use x[2:4] to slice the list and obtain the elements at indices 2 and 3.
+
+Example 10:
+Code:
+
+python
+Copy code
+x = "10"
+y = "5"
+z = x * y
+Response: This code will raise a TypeError. In Python, the * operator can only be used to multiply an integer by a string or an integer by a float, but not two strings. If you want to perform multiplication, convert both strings to integers using int(x) and int(y) before the operation.
+
+Example 11:
+Code:
+
+python
+Copy code
+x = [1, 2, 3]
+x.append(4)
+x.remove(5)
+Response: This code will raise a ValueError. The remove() method tries to remove the value 5 from the list, but since 5 is not present in the list, it raises an error. You should check if the item exists in the list before attempting to remove it.
+
+Example 12:
+Code:
+
+python
+Copy code
+def sum_of_numbers(a, b, c):
+    return a + b + c
+
+sum_of_numbers(1, 2)
+Response: This code will raise a TypeError because the function sum_of_numbers is defined to take three arguments, but only two arguments are provided when calling it. You should either pass the third argument or change the function definition to accept a default value for the third argument.
+
+Example 13:
+Code:
+
+python
+Copy code
+x = {1: "a", 2: "b", 3: "c"}
+del x[4]
+Response: This code raises a KeyError because the key 4 does not exist in the dictionary x. The del statement tries to delete an item by its key, and if the key is not found, it raises a KeyError. You should check for the key's existence before using del, or handle the exception with a try-except block.
+
+Example 14:
+Code:
+
+python
+Copy code
+x = "Hello"
+for i in range(5):
+    print(x[i])
+Response: This code will raise an IndexError because the string x only has 5 characters (indices 0-4), but the loop runs for i = 4 and attempts to access x[4], which is valid, and then tries to access x[5], which is out of bounds. Ensure that the loop does not exceed the length of the string.
+
+Example 15:
+Code:
+
+python
+Copy code
+x = [1, 2, 3]
+x.sort()
+y = x[2]
+x[1] = y + 2
+Response: This code will execute correctly, but it can be improved for clarity. When sorting a list, it is often better to assign the result to a new variable or to make sure the purpose of sorting aligns with subsequent steps. Here, you're modifying an element of the list based on a sorted value, but this could be confusing to readers. Clarify the logic for better readability.
+
+Example 16:
+Code:
+
+python
+Copy code
+x = 10
+if x = 10:
+    print("x is 10")
+Response: This code has a syntax error. The = operator is used for assignment, but here you need to use the == operator for comparison. = assigns a value to a variable, while == checks if two values are equal.
+
+### FEW_SHOT_PROMPT
+
+#### Example 1
+**Code:**
+```
+print hi
+```
+**Response:**
+- Line 1: Syntax Error – The `print` statement is missing parentheses. In Python 3, `print` is a function and requires parentheses around the content to be printed.  
+
+#### Example 2
+**Code:**
+```
+def add_numbers(a, b):
+    return a + b
+
+result = add_numbers(5)
+```
+**Response:**
+- Line 4: Logical Error – The `add_numbers` function is called with only one argument, but it requires two. This will result in a `TypeError`.  
+  **Tip:** Provide both arguments when calling the function.
+
+#### Example 3
+**Code:**
+```
+x = 10
+y = 0
+z = x / y
+```
+**Response:**
+- Line 3: Logical Error – Division by zero is undefined and will raise a `ZeroDivisionError`.  
+  **Tip:** Check if the denominator is zero before performing division.
+
+#### Example 4
+**Code:**
+```
+for i in range(5):
+    print(i)
+ print("Done")
+```
+**Response:**
+- Line 3: Indentation Error – The `print("Done")` statement is incorrectly indented. This will cause an `IndentationError`.  
+  **Tip:** Align the indentation of all statements at the same block level.
+
+#### Example 5
+**Code:**
+```
+name = "Alice"
+age = 25
+print("Name: " + name + ", Age: " + age)
+```
+**Response:**
+- Line 3: TypeError – Concatenating a string and an integer (`age`) will result in an error. Use `str(age)` to convert the integer to a string.  
+  **Tip:** Update the code to ensure all concatenated values are strings.
+
+#### Example 6
+**Code:**
+```
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(-5))
+```
+**Response:**
+- Line 6: Logical Error – There is no base case to handle negative numbers in the `factorial` function. This will cause infinite recursion and a `RecursionError`.  
+  **Tip:** Add a condition to check for negative numbers and handle them appropriately.
+
+#### Example 7
+**Code:**
+```
+import math
+print(math.sqrt(-1))
+```
+**Response:**
+- Line 2: Logical Error – The `math.sqrt` function does not support negative numbers and will raise a `ValueError`. Use `cmath.sqrt` for complex numbers.  
+  **Tip:** Use the `cmath` module for square roots of negative numbers.
+
+#### Example 8
+**Code:**
+```
+list_of_numbers = [1, 2, 3, 4]
+print(list_of_numbers[4])
+```
+**Response:**
+- Line 2: IndexError – The list only has indices from 0 to 3, but index 4 is accessed, which will raise an error.  
+  **Tip:** Ensure the index is within the valid range of the list.
+
+#### Example 9
+**Code:**
+```
+x = 5
+y = "10"
+print(x + y)
+```
+**Response:**
+- Line 3: TypeError – Adding an integer (`x`) and a string (`y`) is not allowed. Use `int(y)` to convert the string to an integer or `str(x)` to convert the integer to a string.  
+  **Tip:** Ensure consistent data types before performing operations.
+
+#### Example 10
+**Code:**
+```
+def greet():
+    print("Hello, " + name)
+
+greet()
+```
+**Response:**
+- Line 2: NameError – The variable `name` is used before being defined, which will raise an error.  
+  **Tip:** Define the variable `name` before calling the function.
+
+#### Example 11
+**Code:**
+```
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+p = Person()
+```
+**Response:**
+- Line 6: TypeError – The `Person` class’s `__init__` method requires an argument `name`, but none is provided during instantiation.  
+  **Tip:** Provide the required argument when creating an object of the class.
+
+#### Example 12
+**Code:**
+```
+try:
+    x = 10 / 0
+except:
+    print("An error occurred")
+```
+**Response:**
+- Line 4: Logical Error – The `except` block catches all exceptions, which is not a best practice. Specify the exception type (e.g., `except ZeroDivisionError`) to handle errors more precisely.  
+  **Tip:** Update the `except` block to catch specific exceptions only.
+
+#### Example 13
+**Code:**
+```
+data = {"key": "value"}
+print(data["missing_key"])
+```
+**Response:**
+- Line 2: KeyError – The key `"missing_key"` does not exist in the dictionary, which will raise an error.  
+  **Tip:** Check if the key exists in the dictionary before accessing it.
+
+#### Example 14
+**Code:**
+```
+x = [1, 2, 3]
+for i in range(4):
+    print(x[i])
+```
+**Response:**
+- Line 3: IndexError – The loop attempts to access index 3, but the list only has indices 0 to 2. This will raise an error.  
+  **Tip:** Ensure the loop range matches the valid indices of the list.
+
+#### Example 15
+**Code:**
+```
+def add_to_list(value, my_list=[]):
+    my_list.append(value)
+    return my_list
+
+print(add_to_list(1))
+print(add_to_list(2))
+```
+**Response:**
+- Line 1: Logical Error – The default argument `my_list=[]` is mutable and shared across function calls, leading to unexpected behavior. Use `None` as the default and initialize the list inside the function.  
+  **Tip:** Avoid using mutable default arguments in function definitions.
+
+#### Example 16
+**Code:**
+```
+while True:
+    pass
+```
+**Response:**
+- Line 1: Logical Error – This is an infinite loop with no exit condition, which can cause the program to hang.  
+  **Tip:** Add a condition or a break statement to exit the loop when necessary.
+
+#### Example 17
+**Code:**
+```
+def calculate_area(radius):
+    area = math.pi * radius**2
+    return area
+
+print(calculate_area(5))
+```
+**Response:**
+- Line 2: NameError – The `math` module is used but not imported, which will raise an error.  
+  **Tip:** Import the `math` module before using its functions or constants.
+
+#### Example 18
+**Code:**
+```
+x = 0
+if x = 5:
+    print("x is 5")
+```
+**Response:**
+- Line 2: Syntax Error – The assignment operator `=` is used instead of the comparison operator `==`, which will raise a `SyntaxError`.  
+  **Tip:** Use `==` for comparisons instead of `=`.
+
+#### Example 19
+**Code:**
+```
+def func(a, b, c):
+    return a + b + c
+
+print(func(1, 2))
+```
+**Response:**
+- Line 4: TypeError – The `func` function requires three arguments, but only two are provided, which will raise an error.  
+  **Tip:** Provide all required arguments when calling the function.
+
+#### Example 20
+**Code:**
+```
+def main():
+    print("Start")
+
+main()
+```
+**Response:**
+- No errors detected in the code. It will execute as expected.
+
