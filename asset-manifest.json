@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/CodeMentor/static/css/main.85097c47.css",
+    "main.js": "/CodeMentor/static/js/main.2fd69a5e.js",
+    "static/js/488.9160d511.chunk.js": "/CodeMentor/static/js/488.9160d511.chunk.js",
+    "index.html": "/CodeMentor/index.html",
+    "main.85097c47.css.map": "/CodeMentor/static/css/main.85097c47.css.map",
+    "main.2fd69a5e.js.map": "/CodeMentor/static/js/main.2fd69a5e.js.map",
+    "488.9160d511.chunk.js.map": "/CodeMentor/static/js/488.9160d511.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.85097c47.css",
+    "static/js/main.2fd69a5e.js"
+  ]
+}
