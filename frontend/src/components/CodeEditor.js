@@ -17,7 +17,7 @@ const CodeEditor = () => {
     setLoading(true);
     setResponse('');
     try {
-      const res = await fetch('https://18f1-2600-1700-4a30-a870-9533-6f27-c171-3e99.ngrok-free.app/api/analyze_code', {
+      const res = await fetch('http://127.0.0.1:5000/api/analyze_code', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
