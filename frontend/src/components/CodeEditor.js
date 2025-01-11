@@ -17,7 +17,7 @@ const CodeEditor = () => {
     setLoading(true);
     setResponse('');
     try {
-      const res = await fetch('http://192.168.1.81:5000/api/analyze_code', {
+      const res = await fetch('https://192.168.1.81:5000/api/analyze_code', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
