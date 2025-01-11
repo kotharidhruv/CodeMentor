@@ -2,9 +2,10 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import ollama
 import logging
+import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins="*")
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -12,7 +13,8 @@ model = "codellama:7b"
 
 def load_few_shot_examples():
     try:
-        with open("few_shot_examples.txt", "r") as file:
+        file_path = os.path.join(os.path.dirname(__file__), "few_shot_examples.txt")
+        with open(file_path, "r") as file:
             return file.read()
     except FileNotFoundError:
         logging.error("Error: few_shot_examples.txt not found. Please ensure the file exists in the same directory.")
@@ -57,4 +59,4 @@ def analyze_code():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
